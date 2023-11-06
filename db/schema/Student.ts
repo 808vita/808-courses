@@ -1,8 +1,8 @@
 import { Schema, model, models } from "mongoose";
 
-const LikeSchema = new Schema(
+const StudentSchema = new Schema(
   {
-    likerId: {
+    studentId: {
       type: Schema.Types.ObjectId,
       required: true,
     },
@@ -16,5 +16,5 @@ const LikeSchema = new Schema(
   }
 );
 
-const Like = models.Like || model("Like", LikeSchema);
-export default Like;
+const Student = models.Student || model("Student", StudentSchema);
+export default Student;
