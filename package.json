@@ -9,14 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@popperjs/core": "2.11.7",
     "@types/node": "20.8.10",
     "@types/react": "18.2.35",
     "@types/react-dom": "18.2.14",
+    "bootstrap": "5.2.3",
     "eslint": "8.53.0",
     "eslint-config-next": "14.0.1",
     "next": "14.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^5.2.6"
   }
 }
