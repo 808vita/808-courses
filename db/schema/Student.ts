@@ -1,5 +1,8 @@
 import { Schema, model, models } from "mongoose";
 
+
+const enrollementStatus: string[] = ["Open", "Closed", "In Progress"]
+
 const StudentSchema = new Schema(
   {
     studentId: {
@@ -9,6 +12,14 @@ const StudentSchema = new Schema(
     courseId: {
       type: Schema.Types.ObjectId,
       required: true,
+    },
+    // enrolementStatus probably should be here 
+    enrollementStatus: {
+      type: String,
+      default: "Open",
+      enum: {
+        values: enrollementStatus
+      },
     },
   },
   {

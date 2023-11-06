@@ -15,7 +15,7 @@ Syllabus as an expandable item
 export interface ICourseDocument extends Document {
   title: string;
   description: string;
-  enrollementStatus: string;
+  // enrollementStatus: string;
   duration: string;
   loc: string;
   requisites: string;
@@ -35,13 +35,13 @@ const CourseSchema = new Schema<ICourseDocument>(
       type: String,
       required: true,
     },
-    enrollementStatus: {
-      type: String,
-      default: "Open",
-      enum: {
-        values: enrollementStatus
-      },
-    },
+    // enrollementStatus: {
+    //   type: String,
+    //   default: "Open",
+    //   enum: {
+    //     values: enrollementStatus
+    //   },
+    // },
     duration: {
       type: String,
       required: true,
