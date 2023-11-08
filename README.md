@@ -1,38 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS  - Next Auth - MonogoDB - Bootstrap - Crud:
+
+### Deployed link : [`Live Site`](https://nextjs-blog-with-auth.vercel.app/)
+
+
 
 ## Getting Started
+Please run "yarn install" to install all project required dependencies.
 
-First, run the development server:
+Make sure to creare a ".evn.local" file in root level . (same level as .env.example).
+Follow the format mentioned in the .env.example file.
+
+This project uses MongoDb , so please either provide a mongodb atlas url or local mongodb server url.
+
+After installation & setting up env file run the development server:
 
 ```bash
-npm run dev
-# or
+
 yarn dev
-# or
-pnpm dev
+yarn build
+yarn start
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+use "yarn dev" to start the local server.
+use "yarn build" to start the production build files.
+use "yarn start" to start the local server using production build files (run yarn build first!).
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Features of this project:
 
-## Learn More
+- Authentication system using Next Auth and users collection stored to mongodb .
 
-To learn more about Next.js, take a look at the following resources:
+- API endpoint & page path protection .
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Serverside rendered home page and course page .
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Makes use of Nextjs full stack features .
 
-## Deploy on Vercel
+- Redux state management.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Bootstrap based UI & responsive .
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Pagination - optimized pagination , loads only the required fields for the current page number . 
+
+- Search page -using backed regex
+
+- Makes use of fetch api for network calls 
+
+- Git / github used for file versioning and management.
+
+
+
+## Specifics
+- Fetches list of courses from backend
+- Displays scrollable courses list - clickable
+- Course Details page - displays full details 
+- Users can add new comment - join open courses - mark complete existing courses
+- Dashboard - displays only enrolled courses list
+- Users mark complete- view progress - displays relevant details
+- Redux for statemangement - which closely mimics useState behaviour
+- Search courses using search function - search for all course details
+- Bootstrap & CSS UI & viewport responsive.
+- Pagination - splits blog post data into smaller chunks & fetched based on the pagination
+- Client side & server side validations for forms & requests.
+- File versioning - using git/ github
+- Readme
