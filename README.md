@@ -1,6 +1,6 @@
 # NextJS  - Next Auth - MonogoDB - Bootstrap - Crud:
 
-### Deployed link : [`Live Site`](https://nextjs-blog-with-auth.vercel.app/)
+### Deployed link : [`Live Site`](https://808-courses.vercel.app/)
 
 
 
