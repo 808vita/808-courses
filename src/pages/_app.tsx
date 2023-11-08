@@ -1,20 +1,36 @@
 import React, { useEffect } from "react";
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
-import "bootstrap/dist/css/bootstrap.css";
-import Layout from "@/components/Layout";
-import Header from "@/components/Header";
+import Header from "../components/Header";
+import Layout from "../components/Layout";
 
-export default function App({ Component, pageProps }: AppProps) {
+import { SessionProvider } from "next-auth/react";
+import "bootstrap/dist/css/bootstrap.css";
+import type { AppProps } from "next/app";
+import "@/styles/globals.css";
+
+
+import { Provider } from 'react-redux'
+import { store } from "@/redux/store";
+import StateSetterComponent from "@/redux/stateSetterComponent/StateSetterComponent";
+
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap" as any);
   }, []);
 
   return (
-    <>
-      <Header />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout></>
+    <SessionProvider session={session}>
+      <Provider store={store}>
+        <StateSetterComponent/>
+        <Header />
+        <Layout>
+ 
+          <Component {...pageProps} />
+        </Layout>
+      </Provider>
+    </SessionProvider>
+
   );
 }

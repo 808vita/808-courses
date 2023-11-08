@@ -1,21 +1,17 @@
+import { useState, useEffect } from "react";
+import type { GetServerSideProps } from "next";
 
-import { useState,  } from "react";
-
-
-import { serverSideCourse } from "@/getServerSideCallsCourse/getServerSideCalls-Index-Pagination";
 import PaginationComponentCourse from "@/components/paginationCourse/PaginationComponentCourse";
+import { serverSideCourse } from "@/getServerSideCallsCourse/getServerSideCalls-Index-Pagination";
 import CourseComponent from "@/components/courseComponents/CourseComponent";
-
-
-export interface IBlogPost{
-  title: string;
-  description: string;
-  [key:string]:string;
-}
 
 export interface ICourseParts {
   allCourseCount: string;
   allCoursesInParts: string;
+}
+
+export interface courseItem {
+  [key: string]: any;
 }
 
 export default function Home({
@@ -31,7 +27,7 @@ export default function Home({
     <>
       <div className="blog-list px-md-5 py-5 p-md-5">
         <div className="container single-col-max-width">
-          {parsedCourses?.map((courseItem: IBlogPost) => (
+          {parsedCourses?.map((courseItem: courseItem) => (
             <CourseComponent key={courseItem._id} courseItem={courseItem} />
           ))}
           {parsedCourses?.length === 0 && <h3>No posts yet /Loading</h3>}
@@ -44,13 +40,14 @@ export default function Home({
 }
 
 // This gets called on every request
-export async function getServerSideProps(context: any) {
+export const getServerSideProps: GetServerSideProps = async (context: any) => {
+  // Fetch data from external API
+  // const res = await fetch(domain + "/api/blog-post/get-all");
+  // const data = await res.json();
+  console.log("oofffffffff");
 
-
-  const { allCourseCount, allCoursesInParts } = await serverSideCourse(
-    context
-  );
+  const { allCourseCount, allCoursesInParts } = await serverSideCourse(context);
 
   // Pass data to the page via props
-  return { props: {allCourseCount, allCoursesInParts } };
-}
+  return { props: { allCourseCount, allCoursesInParts } };
+};

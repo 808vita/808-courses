@@ -11,19 +11,26 @@ Location
 Pre-requisites
 Syllabus as an expandable item
 
-`
+`;
+export interface appState {
+  [key: string]: any;
+}
+
 export interface ICourseDocument extends Document {
   title: string;
   description: string;
-  // enrollementStatus: string;
+  enrollementStatus: string;
   duration: string;
   loc: string;
-  requisites: string;
-  syllabus: string;
+  schedule:string;
+  requisites: any;
+  syllabus: {
+    [key: string]: any;
+  };
   instructorId: ObjectId;
 }
 
-const enrollementStatus: string[] = ["Open", "Closed", "In Progress"]
+
 
 const CourseSchema = new Schema<ICourseDocument>(
   {
@@ -35,13 +42,10 @@ const CourseSchema = new Schema<ICourseDocument>(
       type: String,
       required: true,
     },
-    // enrollementStatus: {
-    //   type: String,
-    //   default: "Open",
-    //   enum: {
-    //     values: enrollementStatus
-    //   },
-    // },
+    enrollementStatus: {
+      type: String,
+      required: true,
+    },
     duration: {
       type: String,
       required: true,
@@ -50,12 +54,16 @@ const CourseSchema = new Schema<ICourseDocument>(
       type: String,
       required: true,
     },
-    requisites: {
+    schedule: {
       type: String,
       required: true,
     },
+    requisites: {
+      type: Object,
+      required: true,
+    },
     syllabus: {
-      type: String,
+      type: Object,
       required: true,
     },
     instructorId: {

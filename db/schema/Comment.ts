@@ -14,6 +14,10 @@ const CommentSchema = new Schema(
       type: Schema.Types.ObjectId,
       required: true,
     },
+    email:{
+      type: String,
+      required: true,
+    }
   },
   {
     timestamps: true,

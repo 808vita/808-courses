@@ -8,7 +8,7 @@ const content = [
     enrollementStatus: "open", // .... this if open check for the student -> conditional render in progress |
     duration: "2 weeks",
     loc: "online",
-    requisites: ["basics of memes", "cat meme enoyer"],
+    requisites: ["basics of memes", "cat meme enjoyer"],
     syllabus: [
       {
         week1: 1,

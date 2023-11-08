@@ -1,7 +1,7 @@
 import { Schema, model, models } from "mongoose";
 
 
-const enrollementStatus: string[] = ["Open", "Closed", "In Progress"]
+const progress: string[] = [ "completed", "in progress"]
 
 const StudentSchema = new Schema(
   {
@@ -14,11 +14,11 @@ const StudentSchema = new Schema(
       required: true,
     },
     // enrolementStatus probably should be here 
-    enrollementStatus: {
+    progress: {
       type: String,
-      default: "Open",
+      default: "in progress",
       enum: {
-        values: enrollementStatus
+        values: progress
       },
     },
   },
